@@ -1,0 +1,55 @@
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI1MmQzNTgzYTY0Y2M2MTk4MmI4ZmEiLCJmaXJzdE5hbWUiOiJhIiwibGFzdE5hbWUiOiJiIiwiZW1haWwiOiJhYkBlbWFpbC5jb20iLCJpYXQiOjE3MTM4ODU3NzZ9.nOTAqJPTa8QuGtv_upfcDnx5YQNqezX5eGfInoPddrw
+@TOURNAMENT_ID=6626eae836c9d6dc5d1c3c1d
+
+### Create new user as participant
+POST http://localhost:3000/tournaments/{{TOURNAMENT_ID}}/events/generate-bracket-events
+Authorization: Bearer {{TOKEN}}
+
+### Get event
+GET http://localhost:3000/tournaments/{{TOURNAMENT_ID}}/events/662733a0466c50558b702820
+Authorization: Bearer {{TOKEN}}
+
+### Update status
+PATCH http://localhost:3000/tournaments/{{TOURNAMENT_ID}}/events/6627e063b875faad82407f02
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+    "status": "ENDED",
+    "start_date": "2024-04-23T04:05:52.318Z",
+    "end_date": "2024-04-23T04:05:52.318Z",
+    "teams": [
+      {
+        "status": "WON",
+        "players": [
+          {
+            "name": {
+              "first": "Player 3",
+              "last": "Player 3"
+            },
+            "email": "p3@email.com",
+            "phone": "phone3",
+            "_id": "662719cac264bbb6106f5d5c"
+          }
+        ],
+        "_id": "662733a0466c50558b702827"
+      },
+      {
+        "status": "LOST",
+        "players": [
+          {
+            "name": {
+              "first": "Player 4",
+              "last": "Player 4"
+            },
+            "email": "p4@email.com",
+            "phone": "phone4",
+            "_id": "66271c4471aaef468b3c01fc"
+          }
+        ],
+        "_id": "662733a0466c50558b70282a"
+      }
+    ],
+    "round_number": 1,
+    "parent_event_id": "6627e063b875faad82407f08"
+}

@@ -1,0 +1,39 @@
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2ZDQ4ZGJiOTk0Mzc1ZTNjMjJiNTIiLCJmaXJzdE5hbWUiOiJhIiwibGFzdE5hbWUiOiJiIiwiZW1haWwiOiJhYkBlbWFpbC5jb20iLCJpYXQiOjE3MTM4MjM2OTB9.O-AZZEcz4NZsbxv-x0uG554_8bLBjXUVEDxkUYQncoM
+@TOURNAMENT_ID=6626dfe3b08df31178da2e98
+
+### Create new user as participant
+POST http://localhost:3000/tournaments/{{TOURNAMENT_ID}}/participants
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "name": {
+        "first": "Player 8",
+        "last": "p8"
+    },
+    "email": "p8@email.com",
+    "phone": "phone8"
+}
+
+### Add existing user as participant
+POST http://localhost:3000/tournaments/{{TOURNAMENT_ID}}/participants/add-existing
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+ "email": "sd@yopmail.com"
+}
+
+### Update status
+PATCH http://localhost:3000/tournaments/{{TOURNAMENT_ID}}/participants/update-status
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+ "userId": "662715259693df0e340f7cc5",
+ "status": "WITHDREW"
+}
+
+### Delete participant
+DELETE http://localhost:3000/tournaments/{{TOURNAMENT_ID}}/participants/662715dde3b67300c10c920a
+Authorization: Bearer {{TOKEN}}

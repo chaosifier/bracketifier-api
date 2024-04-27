@@ -1,0 +1,43 @@
+{
+  "name": "bracketifier-backend",
+  "version": "1.0.0",
+  "description": "Tournament bracket generator API",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx watch src/app.ts",
+    "swagger": "node ./src/swagger.js"
+  },
+  "keywords": [
+    "tournament",
+    "bracket",
+    "generator",
+    "tie-sheet"
+  ],
+  "author": "Sagar Dahal, Madhu Soodan Chakroborty",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.11",
+    "@types/node": "^20.12.7",
+    "@types/swagger-ui-express": "^4.1.6",
+    "swagger-autogen": "^2.23.7",
+    "swagger-jsdoc": "^6.2.8",
+    "tsx": "^4.7.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node": "^18.20.2",
+    "swagger-ui-express": "^5.0.0",
+    "typescript": "^5.4.5"
+  }
+}

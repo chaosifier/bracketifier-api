@@ -1,0 +1,41 @@
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI1MmQzNTgzYTY0Y2M2MTk4MmI4ZmEiLCJmaXJzdE5hbWUiOiJhIiwibGFzdE5hbWUiOiJiIiwiZW1haWwiOiJhYkBlbWFpbC5jb20iLCJpYXQiOjE3MTM4MzY5OTB9.LQcV7uXWB__1aE1l1219KQhiyMRXCxZ5zrDe6H74k00
+
+### Create tournament
+POST http://localhost:3000/tournaments
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+ "title": "tournament 4",
+ "description" : "$1000 prize money!",
+ "start_date" : "2024-04-25T20:18:00.488Z",
+ "end_date" : "2024-04-29T20:18:00.488Z",
+ "max_participants": 50,
+ "type": "SINGLE_ELIMINATION"
+}
+
+### Update tournament
+PATCH http://localhost:3000/tournaments/6626cdc7c4e6573ba390a89f
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+ "title": "tournament 6",
+ "description" : "$1000 prize money!",
+ "start_date" : "2024-04-25T20:18:00.488Z",
+ "end_date" : "2024-04-29T20:18:00.488Z",
+ "max_participants": 30,
+ "type": "SINGLE_ELIMINATION"
+}
+
+### Delete tournament
+DELETE http://localhost:3000/tournaments/6626cdc7c4e6573ba390a89f
+Authorization: Bearer {{TOKEN}}
+
+### Get tournaments to manage
+GET http://localhost:3000/tournaments/manage?pageSize=10&pageNumber=1
+Authorization: Bearer {{TOKEN}}
+
+### Get tournaments to manage
+GET http://localhost:3000/tournaments/6626eae836c9d6dc5d1c3c1d
+Authorization: Bearer {{TOKEN}}
